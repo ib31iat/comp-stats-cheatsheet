@@ -41,7 +41,7 @@
 \subsection{Tests and Confidence Regions}\label{subsec:tests_and_confidence_regions}
 \begin{sectionbox}[T-test]\nospacing{}
   Assume linear model with Gaussian errors (or ``large enough'' sample size), s.t. $\hat{\vec{\beta}} \sim \mathcal{N}_{p}\left(\vec{\beta}, \sigma^{2}{(X^{\top}X)}^{-1}\right)$ is normally distributed.
-  Then we can test the null-hypothesis $H_{0,j}: \beta_{j = 0}$ against $H_{A,j}: \beta_{j \neq 0}$:
+  Then we can test the null-hypothesis $H_{0,j}: \beta_{j} = 0$ against $H_{A,j}: \beta_{j} \neq 0$:
   \[\frac{\hat \beta_{j}}{\sqrt{\sigma^{2}{{(X^{\top}X)}^{-1}_{jj}}}} \sim \mathcal{N}(0,1) \Rightarrow  T_{j} = \frac{\hat \beta_{j}}{\sqrt{\hat \sigma^{2}{{(X^{\top}X)}^{-1}_{jj}}}} \sim t_{n-p}\ \] under the null-hypothesis $H_{0,j}$. Unknown $\sigma^{2}$ is replaced by $\hat \sigma^{2}$. Note that $t_{n-p} \approx \mathcal{N}$.
   An individual t-test for $H_{0,j}$ gives the effect of $\beta_{j}$ after subtracting the linear effect of all $\beta_{i\neq j}$.
   Note that in \verb!summary.lm!, the term \emph{Std. Error} is $\sqrt{\hat \sigma^{2}{{(X^{\top}X)}^{-1}_{jj}}} = \sqrt{\hat{Var}(\hat \beta_{j})}$. Finally, we can also build a confidence interval using $\hat \beta_{j} \pm \sqrt{\hat \sigma^{2}{{(X^{\top}X)}^{-1}_{jj}}} \cdot t_{n-p;1-\alpha/2}$.
